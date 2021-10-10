@@ -58,7 +58,7 @@ public class PageEksperimenLight : MonoBehaviour
             a.rateOverTime = 8;
         }
 
-        float maxValueOpacity = 0.6f;
+        float maxValueOpacity = 0.4f;
         float opacity = maxValueOpacity * value;
         imgCahaya.color = new Color(1,1,0,opacity);
     }

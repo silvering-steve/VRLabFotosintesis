@@ -14,16 +14,16 @@ public class GlobalVar
     /// setting untuk mengecek, apakah dia eksperimen dengan cahaya, atau dengan nahco3
     /// </summary>
     public static CaseEksperimen caseEksperimen = CaseEksperimen.EKSPERIMEN_LIGHT;
-
+    
 
     //======================SETTING PERCOBAAN CAHAYA ============================//
     public enum TingkatCahaya
     {
-        GELAP,
-        SANGAT_REDUP,
-        REDUP,
-        TERANG,
-        SANGAT_TERANG
+        GELAP, // Bara api sangat kecil
+        SANGAT_REDUP, // Bara api kecil
+        REDUP, // Bara api sedang
+        TERANG, // Bara api besar
+        SANGAT_TERANG // Bara api besar sekali
     }
     public static TingkatCahaya tingkatCahaya = TingkatCahaya.GELAP;
     //============================================================================
