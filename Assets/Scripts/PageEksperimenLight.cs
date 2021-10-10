@@ -41,21 +41,21 @@ public class PageEksperimenLight : MonoBehaviour
             //redup
             GlobalVar.tingkatCahaya = GlobalVar.TingkatCahaya.REDUP;
             var a = bubbleParticles.emission;
-            a.rateOverTime = 4;
+            a.rateOverTime = 6;
         }
         else if(value >= 0.6 && value < 0.8)
         {
             //terang
             GlobalVar.tingkatCahaya = GlobalVar.TingkatCahaya.TERANG;
             var a = bubbleParticles.emission;
-            a.rateOverTime = 6;
+            a.rateOverTime = 10;
         }
         else
         {
             //sangat terang
             GlobalVar.tingkatCahaya = GlobalVar.TingkatCahaya.SANGAT_TERANG;
             var a = bubbleParticles.emission;
-            a.rateOverTime = 8;
+            a.rateOverTime = 14;
         }
 
         float maxValueOpacity = 0.4f;
