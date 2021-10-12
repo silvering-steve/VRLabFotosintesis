@@ -16,6 +16,18 @@ public class PageNahco : MonoBehaviour
 
     [SerializeField]
     private Transform posisiBubble;
+    
+    [SerializeField]
+    private Transform posisiPage;
+    
+    [SerializeField]
+    private GameObject prefab_pengujian;
+
+    [SerializeField] 
+    private GameObject pengujian;
+    
+    [SerializeField] 
+    private Transform mainFrame;
 
     private void OnEnable()
     {
@@ -67,5 +79,12 @@ public class PageNahco : MonoBehaviour
         bubble = Instantiate(prefab_bubble.gameObject, posisiBubble.position, Quaternion.identity);
         var a = bubble.GetComponent<ParticleSystem>().emission;
         a.rateOverTime = 0;
+    }
+
+    public void SetPengujian()
+    {
+        pengujian = Instantiate(prefab_pengujian.gameObject, posisiPage.position, Quaternion.identity);
+        pengujian.SetActive(true);
+        pengujian.transform.SetParent(mainFrame, false);
     }
 }

@@ -19,6 +19,18 @@ public class PageEksperimenLight : MonoBehaviour
 
     [SerializeField]
     private Slider slider;
+    
+    [SerializeField]
+    private Transform posisiPage;
+    
+    [SerializeField]
+    private GameObject prefab_pengujian;
+
+    [SerializeField] 
+    private GameObject pengujian;
+    
+    [SerializeField] 
+    private Transform mainFrame;
 
     public void ChangeValueSlider(float value)
     {
@@ -58,9 +70,9 @@ public class PageEksperimenLight : MonoBehaviour
             a.rateOverTime = 14;
         }
 
-        float maxValueOpacity = 0.4f;
+        float maxValueOpacity = 1f;
         float opacity = maxValueOpacity * value;
-        imgCahaya.color = new Color(1,1,0,opacity);
+        imgCahaya.color = new Color(1,1,1,opacity);
     }
 
 
@@ -91,5 +103,12 @@ public class PageEksperimenLight : MonoBehaviour
         slider.value = 0f;
 
         ChangeValueSlider(slider.value);
+    }
+    
+    public void SetPengujian()
+    {
+        pengujian = Instantiate(prefab_pengujian.gameObject, posisiPage.position, Quaternion.identity);
+        pengujian.SetActive(true);
+        pengujian.transform.SetParent(mainFrame, false);
     }
 }
