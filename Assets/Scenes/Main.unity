@@ -5771,11 +5771,11 @@ RectTransform:
   m_Father: {fileID: 1933439646}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -570, y: 148}
-  m_SizeDelta: {x: 300, y: 764}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 230, y: 0}
+  m_SizeDelta: {x: 300, y: 300}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &737115606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7043,8 +7043,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1200, y: 100}
+  m_AnchoredPosition: {x: 250, y: 0}
+  m_SizeDelta: {x: 1000, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &895967745
 MonoBehaviour:
@@ -7065,10 +7065,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BLABLABLABLABLABLABLABLABLABLABLABALBLA
+  m_text: "<b> Tim Produksi </b>\n\nBalai Pengembangan Multimedia Pendidikan dan
+    Kebudayaan\r\nKementerian Pendidikan, Kebudayaan, Riset dan Teknologi\r\nJl Mr.
+    Koessoebiyono Tjondro Wibowo,\r\nKel. Pakintelan, Kec. Gunung Pati,\r\nKota Semarang,
+    Jawa Tengah\r\ntlp 024-8314292 | fax 024-8310051\r\n2021\r\n\r\n<b> Tim Pengembang
+    Mobile V-Lab\r </b>\n\r\nPenulis : Soimatussa'diyah, S.Pd\r\nInstansi : SMP Negeri
+    13 Semarang\r\nPengkaji Materi : Erna Noor Savitri, S.Si., M.Pd.\r\nPengkaji
+    Media : Budi Wahono, S.Pd."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b30b347c8411c444795221f4310d2f93, type: 2}
-  m_sharedMaterial: {fileID: -1151772353325610443, guid: b30b347c8411c444795221f4310d2f93,
+  m_fontAsset: {fileID: 11400000, guid: 491e0c33cfb97a3429ff394facbb149e, type: 2}
+  m_sharedMaterial: {fileID: 5647374714309391756, guid: 491e0c33cfb97a3429ff394facbb149e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7093,19 +7099,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 5
+  m_characterSpacing: -5
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -15
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -17281,13 +17287,14 @@ GameObject:
   - component: {fileID: 1980077646}
   - component: {fileID: 1980077645}
   - component: {fileID: 1980077648}
+  - component: {fileID: 1980077649}
   m_Layer: 5
   m_Name: 8 Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1980077644
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17361,6 +17368,18 @@ CanvasRenderer:
   m_GameObject: {fileID: 1980077643}
   m_CullTransparentMesh: 0
 --- !u!114 &1980077648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980077643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ef774477037a54ba07e90e5abaecc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1980077649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
