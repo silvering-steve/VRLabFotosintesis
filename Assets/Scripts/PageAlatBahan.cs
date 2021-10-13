@@ -42,23 +42,6 @@ public class PageAlatBahan : MonoBehaviour
     private Transform lokasi_gelas;
     bool startGlass;
 
-    [Header("GAMBAR SPAWN")]
-    [SerializeField]
-    private GameObject spawn_gelas;
-    [SerializeField]
-    private GameObject spawn_kawat;
-    [SerializeField]
-    private GameObject spawn_corong;
-    [SerializeField]
-    private GameObject spawn_tabung;
-    [SerializeField]
-    private GameObject spawn_air;
-    [SerializeField]
-    private GameObject spawn_nahco;
-    [SerializeField]
-    private GameObject spawn_tumbuhan;
-
-
     public enum StateObj
     {
         GELAS = 0,
@@ -75,9 +58,8 @@ public class PageAlatBahan : MonoBehaviour
     private StateObj state_menu;//setting buat urutan menaruh obj
 
     [SerializeField]
-    private Sprite[] urutan_img;
-    [SerializeField]
-    private Image imgPercobaan;
+    private GameObject[] urutan_img;
+
     [Header("PANEL ERROR")]
     [SerializeField]
     private GameObject panelError;
@@ -88,24 +70,22 @@ public class PageAlatBahan : MonoBehaviour
     #region FUNGSI RESET
     public void ResetData()
     {
-        Destroy(spawn_gelas);
-        Destroy(spawn_kawat);
-        Destroy(spawn_corong);
-        Destroy(spawn_tabung);
-        Destroy(spawn_air);
-        Destroy(spawn_nahco);
-        Destroy(spawn_tumbuhan);
 
         foreach (var a in alat_bahan)
             a.SetActive(true);
 
+        foreach (var a in urutan_img)
+            a.SetActive(false);
+
         state_menu = StateObj.GELAS;
         animating = false;
-        imgPercobaan.gameObject.SetActive(false);
+        //imgPercobaan.gameObject.SetActive(false);
     }
 
     private void OnEnable()
     {
+        GlobalVar.jumlahNahco3 = 0;
+        GlobalVar.tingkatCahaya = GlobalVar.TingkatCahaya.GELAP;
         ResetData();
         state_menu = StateObj.MULAI;
     }
@@ -231,11 +211,11 @@ public class PageAlatBahan : MonoBehaviour
 
         GameObject p = Instantiate(obj_gelasKimia, obj_gelasKimia.transform);
         p.transform.parent = lokasi_gelas;
-        spawn_gelas = p;
+
         distance = Vector2.Distance(p.transform.position, lokasi_gelas.transform.position);
 
         //disable obj gelas
-        alat_bahan[(int)state_menu-1].SetActive(false);
+        alat_bahan[(int)state_menu - 1].SetActive(false);
 
         while (distance >= 0.01f)
         {
@@ -245,8 +225,9 @@ public class PageAlatBahan : MonoBehaviour
         }
         p.SetActive(false);
         animating = false;
-        imgPercobaan.gameObject.SetActive(true);
-        imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        //imgPercobaan.gameObject.SetActive(true);
+        //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        urutan_img[(int)state_menu - 1].SetActive(true);
     }
 
     IEnumerator ie_kawat()
@@ -257,7 +238,7 @@ public class PageAlatBahan : MonoBehaviour
 
         GameObject p = Instantiate(kawat_pengait, kawat_pengait.transform);
         p.transform.parent = lokasi_gelas;
-        spawn_kawat = p;
+
         distance = Vector2.Distance(p.transform.position, lokasi_gelas.transform.position);
 
         //disable obj gelas
@@ -271,7 +252,8 @@ public class PageAlatBahan : MonoBehaviour
         }
         p.SetActive(false);
         animating = false;
-        imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        urutan_img[(int)state_menu - 1].SetActive(true);
     }
 
     IEnumerator ie_corong()
@@ -282,7 +264,7 @@ public class PageAlatBahan : MonoBehaviour
 
         GameObject p = Instantiate(corong_kaca, corong_kaca.transform);
         p.transform.parent = lokasi_gelas;
-        spawn_corong = p;
+
         distance = Vector2.Distance(p.transform.position, lokasi_gelas.transform.position);
 
         //disable obj gelas
@@ -296,7 +278,8 @@ public class PageAlatBahan : MonoBehaviour
         }
         p.SetActive(false);
         animating = false;
-        imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        urutan_img[(int)state_menu - 1].SetActive(true);
     }
 
     IEnumerator ie_tabung()
@@ -307,11 +290,11 @@ public class PageAlatBahan : MonoBehaviour
 
         GameObject p = Instantiate(tabung_reaksi, tabung_reaksi.transform);
         p.transform.parent = lokasi_gelas;
-        spawn_tabung = p;
+
         distance = Vector2.Distance(p.transform.position, lokasi_gelas.transform.position);
 
         //disable obj gelas
-        
+
         alat_bahan[(int)state_menu - 1].SetActive(false);
 
         while (distance >= 0.01f)
@@ -322,7 +305,8 @@ public class PageAlatBahan : MonoBehaviour
         }
         p.SetActive(false);
         animating = false;
-        imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        urutan_img[(int)state_menu - 1].SetActive(true);
     }
 
     IEnumerator ie_air()
@@ -333,7 +317,7 @@ public class PageAlatBahan : MonoBehaviour
 
         GameObject p = Instantiate(obj_air, obj_air.transform);
         p.transform.parent = lokasi_gelas;
-        spawn_air = p;
+
         distance = Vector2.Distance(p.transform.position, lokasi_gelas.transform.position);
 
         //disable obj gelas
@@ -348,7 +332,8 @@ public class PageAlatBahan : MonoBehaviour
         }
         p.SetActive(false);
         animating = false;
-        imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        urutan_img[(int)state_menu - 1].SetActive(true);
     }
 
     IEnumerator ie_nahco()
@@ -359,7 +344,7 @@ public class PageAlatBahan : MonoBehaviour
 
         GameObject p = Instantiate(obj_kimia, obj_kimia.transform);
         p.transform.parent = lokasi_gelas;
-        spawn_nahco = p;
+
         distance = Vector2.Distance(p.transform.position, lokasi_gelas.transform.position);
 
         //disable obj gelas
@@ -374,7 +359,8 @@ public class PageAlatBahan : MonoBehaviour
         }
         p.SetActive(false);
         animating = false;
-        imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        urutan_img[(int)state_menu - 1].SetActive(true);
     }
 
     IEnumerator ie_tanaman()
@@ -385,7 +371,7 @@ public class PageAlatBahan : MonoBehaviour
 
         GameObject p = Instantiate(tanaman, tanaman.transform);
         p.transform.parent = lokasi_gelas;
-        spawn_tumbuhan = p;
+
         distance = Vector2.Distance(p.transform.position, lokasi_gelas.transform.position);
 
         //disable obj gelas
@@ -400,13 +386,14 @@ public class PageAlatBahan : MonoBehaviour
         }
         p.SetActive(false);
         animating = false;
-        imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
+        urutan_img[(int)state_menu - 1].SetActive(true);
     }
     #endregion
 
     public void ClickNext()
     {
-        if(state_menu != StateObj.SELESAI)
+        if (state_menu != StateObj.SELESAI)
         {
             panelError.SetActive(true);
             return;
@@ -429,6 +416,7 @@ public class PageAlatBahan : MonoBehaviour
 
     public void ClickSiapkanAlatBahan()
     {
-        state_menu = StateObj.GELAS;
+        if (state_menu == StateObj.MULAI)
+            state_menu = StateObj.GELAS;
     }
 }
