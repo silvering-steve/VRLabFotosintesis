@@ -36,6 +36,9 @@ public class PageAlatBahan : MonoBehaviour
     [SerializeField]
     public GameObject obj_meja;
 
+    [SerializeField]
+    private Popup _popoup;
+
 
     [Header("LOKASI POSISI")]
     [SerializeField]
@@ -65,11 +68,18 @@ public class PageAlatBahan : MonoBehaviour
     private GameObject panelError;
 
     [SerializeField]
+    public List<GameObject> list_highlight;
+
+    [SerializeField]
     private bool animating = false; // cek, apakah sedang melakukan animasi atau tidak
+
+    bool firstOpen = true;
 
     #region FUNGSI RESET
     public void ResetData()
     {
+        foreach (var a in list_highlight)
+            a.SetActive(false);
 
         foreach (var a in alat_bahan)
             a.SetActive(true);
@@ -77,17 +87,29 @@ public class PageAlatBahan : MonoBehaviour
         foreach (var a in urutan_img)
             a.SetActive(false);
 
-        state_menu = StateObj.GELAS;
+        if (!firstOpen)
+        {
+            state_menu = StateObj.GELAS;
+            list_highlight[0].SetActive(true);
+        }
+
+
         animating = false;
-        //imgPercobaan.gameObject.SetActive(false);
+
     }
 
     private void OnEnable()
     {
+        _popoup.SetData("Click centang terlebih dahulu sebelum memasukan alat dan bahan.");
+
+        firstOpen = true;
+
         GlobalVar.jumlahNahco3 = 0;
         GlobalVar.tingkatCahaya = GlobalVar.TingkatCahaya.GELAP;
         ResetData();
         state_menu = StateObj.MULAI;
+
+        firstOpen = false;
     }
     #endregion
 
@@ -95,6 +117,9 @@ public class PageAlatBahan : MonoBehaviour
     #region FUNGSI CLICK ALAT BAHAN
     public void ClickGelas()
     {
+        if (state_menu == StateObj.MULAI)
+            _popoup.SetData("Click centang terlebih dahulu sebelum memasukan alat dan bahan.");
+
         if (animating)
             return;
 
@@ -111,6 +136,9 @@ public class PageAlatBahan : MonoBehaviour
 
     public void ClickKawat()
     {
+        if (state_menu == StateObj.MULAI)
+            _popoup.SetData("Click centang terlebih dahulu sebelum memasukan alat dan bahan.");
+
         if (animating)
             return;
 
@@ -127,6 +155,9 @@ public class PageAlatBahan : MonoBehaviour
 
     public void ClickCorong()
     {
+        if (state_menu == StateObj.MULAI)
+            _popoup.SetData("Click centang terlebih dahulu sebelum memasukan alat dan bahan.");
+
         if (animating)
             return;
 
@@ -142,6 +173,9 @@ public class PageAlatBahan : MonoBehaviour
 
     public void ClickTabung()
     {
+        if (state_menu == StateObj.MULAI)
+            _popoup.SetData("Click centang terlebih dahulu sebelum memasukan alat dan bahan.");
+
         if (animating)
             return;
 
@@ -157,6 +191,9 @@ public class PageAlatBahan : MonoBehaviour
 
     public void ClickAir()
     {
+        if (state_menu == StateObj.MULAI)
+            _popoup.SetData("Click centang terlebih dahulu sebelum memasukan alat dan bahan.");
+
         if (animating)
             return;
 
@@ -171,6 +208,9 @@ public class PageAlatBahan : MonoBehaviour
     }
     public void ClickNahco()
     {
+        if (state_menu == StateObj.MULAI)
+            _popoup.SetData("Click centang terlebih dahulu sebelum memasukan alat dan bahan.");
+
         if (animating)
             return;
 
@@ -186,6 +226,9 @@ public class PageAlatBahan : MonoBehaviour
 
     public void ClickTumbuhan()
     {
+        if (state_menu == StateObj.MULAI)
+            _popoup.SetData("Click centang terlebih dahulu sebelum memasukan alat dan bahan.");
+
         if (animating)
             return;
 
@@ -205,6 +248,8 @@ public class PageAlatBahan : MonoBehaviour
     #region IENUMERATOR ANIMASI
     IEnumerator ie_gelas()
     {
+        list_highlight[0].SetActive(false);
+
         animating = true;
         float speed = 10 * Time.deltaTime;
         float distance = 0f;
@@ -228,10 +273,14 @@ public class PageAlatBahan : MonoBehaviour
         //imgPercobaan.gameObject.SetActive(true);
         //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
         urutan_img[(int)state_menu - 1].SetActive(true);
+
+        list_highlight[1].SetActive(true);
     }
 
     IEnumerator ie_kawat()
     {
+        list_highlight[1].SetActive(false);
+
         animating = true;
         float speed = 10 * Time.deltaTime;
         float distance = 0f;
@@ -254,10 +303,14 @@ public class PageAlatBahan : MonoBehaviour
         animating = false;
         //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
         urutan_img[(int)state_menu - 1].SetActive(true);
+
+        list_highlight[2].SetActive(true);
     }
 
     IEnumerator ie_corong()
     {
+        list_highlight[2].SetActive(false);
+
         animating = true;
         float speed = 10 * Time.deltaTime;
         float distance = 0f;
@@ -280,10 +333,14 @@ public class PageAlatBahan : MonoBehaviour
         animating = false;
         //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
         urutan_img[(int)state_menu - 1].SetActive(true);
+
+        list_highlight[3].SetActive(true);
     }
 
     IEnumerator ie_tabung()
     {
+        list_highlight[3].SetActive(false);
+
         animating = true;
         float speed = 10 * Time.deltaTime;
         float distance = 0f;
@@ -307,10 +364,14 @@ public class PageAlatBahan : MonoBehaviour
         animating = false;
         //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
         urutan_img[(int)state_menu - 1].SetActive(true);
+
+        list_highlight[4].SetActive(true);
     }
 
     IEnumerator ie_air()
     {
+        list_highlight[4].SetActive(false);
+
         animating = true;
         float speed = 10 * Time.deltaTime;
         float distance = 0f;
@@ -334,10 +395,14 @@ public class PageAlatBahan : MonoBehaviour
         animating = false;
         //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
         urutan_img[(int)state_menu - 1].SetActive(true);
+
+        list_highlight[5].SetActive(true);
     }
 
     IEnumerator ie_nahco()
     {
+        list_highlight[5].SetActive(false);
+
         animating = true;
         float speed = 10 * Time.deltaTime;
         float distance = 0f;
@@ -361,10 +426,14 @@ public class PageAlatBahan : MonoBehaviour
         animating = false;
         //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
         urutan_img[(int)state_menu - 1].SetActive(true);
+
+        list_highlight[6].SetActive(true);
     }
 
     IEnumerator ie_tanaman()
     {
+        list_highlight[6].SetActive(false);
+
         animating = true;
         float speed = 10 * Time.deltaTime;
         float distance = 0f;
@@ -388,6 +457,8 @@ public class PageAlatBahan : MonoBehaviour
         animating = false;
         //imgPercobaan.sprite = urutan_img[(int)state_menu - 1];
         urutan_img[(int)state_menu - 1].SetActive(true);
+
+        
     }
     #endregion
 
@@ -417,6 +488,9 @@ public class PageAlatBahan : MonoBehaviour
     public void ClickSiapkanAlatBahan()
     {
         if (state_menu == StateObj.MULAI)
+        {
             state_menu = StateObj.GELAS;
+            list_highlight[0].SetActive(true);
+        }
     }
 }
