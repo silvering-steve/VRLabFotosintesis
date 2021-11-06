@@ -33,4 +33,7 @@ public class GlobalVar
     public static int jumlahNahco3;
     //============================================================================
 
+
+    public static int ScoreQuiz;
+
 }
