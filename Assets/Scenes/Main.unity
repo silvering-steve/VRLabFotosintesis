@@ -1899,7 +1899,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEBAH
+  m_text: Daun
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 491e0c33cfb97a3429ff394facbb149e, type: 2}
   m_sharedMaterial: {fileID: 5647374714309391756, guid: 491e0c33cfb97a3429ff394facbb149e,
@@ -1927,10 +1927,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 57.1
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -4346,7 +4346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &350979889
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4917,7 +4917,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: IKAN
+  m_text: O<sub>2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 491e0c33cfb97a3429ff394facbb149e, type: 2}
   m_sharedMaterial: {fileID: 5647374714309391756, guid: 491e0c33cfb97a3429ff394facbb149e,
@@ -4945,8 +4945,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 57
+  m_fontSizeBase: 57
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13356,7 +13356,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: IKAN
+  m_text: CO<sub>2</sub>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 491e0c33cfb97a3429ff394facbb149e, type: 2}
   m_sharedMaterial: {fileID: 5647374714309391756, guid: 491e0c33cfb97a3429ff394facbb149e,
@@ -13384,8 +13384,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 57
+  m_fontSizeBase: 57
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -16182,7 +16182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: IKAN
+  m_text: NaHCO<sub>3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 491e0c33cfb97a3429ff394facbb149e, type: 2}
   m_sharedMaterial: {fileID: 5647374714309391756, guid: 491e0c33cfb97a3429ff394facbb149e,
@@ -16210,8 +16210,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18978,7 +18978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1401409641
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19121,7 +19121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AYAM
+  m_text: Air
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 491e0c33cfb97a3429ff394facbb149e, type: 2}
   m_sharedMaterial: {fileID: 5647374714309391756, guid: 491e0c33cfb97a3429ff394facbb149e,
@@ -19149,10 +19149,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 57.1
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -21501,7 +21501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JERAPAH
+  m_text: Cahaya Matahari
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 491e0c33cfb97a3429ff394facbb149e, type: 2}
   m_sharedMaterial: {fileID: 5647374714309391756, guid: 491e0c33cfb97a3429ff394facbb149e,
@@ -21529,8 +21529,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -25011,7 +25011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1784851049
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31531,7 +31531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JERAPAH
+  m_text: Kloroplas
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 491e0c33cfb97a3429ff394facbb149e, type: 2}
   m_sharedMaterial: {fileID: 5647374714309391756, guid: 491e0c33cfb97a3429ff394facbb149e,
@@ -31559,10 +31559,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 57.1
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
