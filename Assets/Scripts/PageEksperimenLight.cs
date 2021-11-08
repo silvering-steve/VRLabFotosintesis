@@ -32,10 +32,15 @@ public class PageEksperimenLight : MonoBehaviour
     [SerializeField] 
     private Transform mainFrame;
 
+    public Animator anim;
+    public Animator anim2;
+
     public void ChangeValueSlider(float value)
     {
         if(value >= 0 && value < 0.2)
         {
+            anim2.enabled = false;
+            anim.Play("LRev");
             //gelap
             GlobalVar.tingkatCahaya = GlobalVar.TingkatCahaya.GELAP;
             var a = bubbleParticles.emission;
@@ -47,6 +52,8 @@ public class PageEksperimenLight : MonoBehaviour
             GlobalVar.tingkatCahaya = GlobalVar.TingkatCahaya.SANGAT_REDUP;
             var a = bubbleParticles.emission;
             a.rateOverTime = 2;
+            anim.Play("Light");
+            anim2.enabled = true;
         }
         else if(value >= 0.4 && value < 0.6)
         {
@@ -111,4 +118,6 @@ public class PageEksperimenLight : MonoBehaviour
         pengujian.SetActive(true);
         pengujian.transform.SetParent(mainFrame, false);
     }
+    
+    
 }

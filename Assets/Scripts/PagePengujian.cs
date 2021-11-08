@@ -12,12 +12,19 @@ public class PagePengujian : MonoBehaviour
     public GameObject api;
     public GameObject exit;
 
+    public Color color;
+    public Color color1;
+    public Color color2;
+    public Color color3;
+    public Color color4;
+
     [SerializeField]
+    
     private int NaHCO3;
     
     [SerializeField]
     private GlobalVar.TingkatCahaya Light;
-
+    
     private void Update()
     {
         NaHCO3 = GlobalVar.jumlahNahco3;
@@ -39,15 +46,15 @@ public class PagePengujian : MonoBehaviour
 
     public void ApiDisabled()
     {
-        var a =api.GetComponent<ParticleSystem>().emission;
-        a.rateOverTime = 0;
+        var c = api.GetComponent<ParticleSystem>().colorOverLifetime;
+        c.color = color;
     }
 
     public void ApiEnabled()
     {
         var a = GlobalVar.jumlahNahco3;
         var b = GlobalVar.tingkatCahaya;
-        var c =api.GetComponent<ParticleSystem>().emission;
+        var c = api.GetComponent<ParticleSystem>().colorOverLifetime;
         
         if (a == 0 && b != 0)
         {
@@ -59,67 +66,73 @@ public class PagePengujian : MonoBehaviour
         }
         else
         {
-            c.rateOverTime = 0;
+            c.color = color;
         }
     }
 
     private void AturCahaya()
     {
         var b = GlobalVar.tingkatCahaya;
-        var c = api.GetComponent<ParticleSystem>().emission;
+        var c = api.GetComponent<ParticleSystem>().colorOverLifetime;
         
         //Light
         if (b == GlobalVar.TingkatCahaya.GELAP)
         {
-            c.rateOverTime = 0;
+            c.color = color;
         } 
         else if (b == GlobalVar.TingkatCahaya.SANGAT_REDUP)
         {
-            c.rateOverTime = 5;
+            c.color = color1;
         }
         else if (b == GlobalVar.TingkatCahaya.REDUP)
         {
-            c.rateOverTime = 13;
+            c.color = color2;
         }
         else if (b == GlobalVar.TingkatCahaya.TERANG)
         {
-            c.rateOverTime = 20;
+            c.color = color3;
         }
         else if (b == GlobalVar.TingkatCahaya.SANGAT_TERANG)
         {
-            c.rateOverTime = 35;
+            c.color = color4;
         }
     }
 
     private void AturNaHCO3()
     {
-        var c = api.GetComponent<ParticleSystem>().emission;
+        var c = api.GetComponent<ParticleSystem>().colorOverLifetime;
         var a = GlobalVar.jumlahNahco3;
 
         //NaHCO3
         if (a == 0)
         {
-            c.rateOverTime = 0;
+            c.color = color;
+
         } 
         else if (a == 1)
         {
-            c.rateOverTime = 5;
+            c.color = color1;
+
         }
         else if (a == 2)
         {
-            c.rateOverTime = 13;
+            c.color = color2;
+
         }
         else if (a == 3)
         {
-            c.rateOverTime = 20;
+            c.color = color3;
+
         }
         else if (a == 4)
         {
-            c.rateOverTime = 35;
+            c.color = color4;
+
         }
         else if (a == 5)
         {
-            c.rateOverTime = 35;
+            c.color = color4;
+
         }
     }
 

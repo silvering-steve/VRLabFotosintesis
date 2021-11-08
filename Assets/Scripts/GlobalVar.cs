@@ -30,7 +30,7 @@ public class GlobalVar
 
 
     //======================SETTING PERCOBAAN NAHCO3 ============================//
-    public static int jumlahNahco3;
+    public static int jumlahNahco3 = 5;
     //============================================================================
 
 

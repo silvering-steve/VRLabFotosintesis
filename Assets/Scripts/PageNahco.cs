@@ -28,7 +28,16 @@ public class PageNahco : MonoBehaviour
     
     [SerializeField] 
     private Transform mainFrame;
+    
+    public Animator anim;
+    public Animator anim2;
+    public Animator anim3;
 
+    public void PlayAnim()
+    {
+        anim3.Play("Sendok");
+    }
+    
     private void OnEnable()
     {
         GlobalVar.jumlahNahco3 = 0;
@@ -54,9 +63,13 @@ public class PageNahco : MonoBehaviour
         switch (GlobalVar.jumlahNahco3)
         {
             case 0:
+                anim2.enabled = false;
+                anim.Play("LRev");
                 a.rateOverTime = 0;
                 break;
             case 1:
+                anim.Play("Light");
+                anim2.enabled = true;
                 a.rateOverTime = 2;
                 break;
             case 2:

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,6 +39,10 @@ public class PageAlatBahan : MonoBehaviour
 
     [SerializeField]
     private Popup _popoup;
+
+    public GameObject startPop;
+    public GameObject lightPop;
+    public GameObject nahcoPop;
 
 
     [Header("LOKASI POSISI")]
@@ -492,5 +497,12 @@ public class PageAlatBahan : MonoBehaviour
             state_menu = StateObj.GELAS;
             list_highlight[0].SetActive(true);
         }
+    }
+
+    private void OnDisable()
+    {
+        startPop.SetActive(true);
+        lightPop.SetActive(true);
+        nahcoPop.SetActive(true);
     }
 }
