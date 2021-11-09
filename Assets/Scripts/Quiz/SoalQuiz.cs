@@ -71,12 +71,12 @@ public class SoalQuiz : MonoBehaviour
 
             if (a == list_indxJawabanTerselect[i])
             {
-                scoreBenar++;
+                GlobalVar.ScoreQuiz += 1;
             }            
             i++;
         }
 
-        parentSoal.CheckSoal(scoreBenar);
+        parentSoal.CheckSoal(GlobalVar.ScoreQuiz);
 
     }
 

@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ParentPasangkan : MonoBehaviour
 {
+    public GameObject next;
+    public int total;
     public enum ClickStatus
     {
         NONE = 0,
@@ -31,5 +34,19 @@ public class ParentPasangkan : MonoBehaviour
         clickKedua = null;
         clickWhere= ClickStatus.NONE;
         jumClick = 0;
+    }
+
+    private void Update()
+    {
+        Check();
+    }
+
+    public void Check()
+    {
+        if (total == 8)
+        {
+            gameObject.SetActive(false);
+            next.SetActive(true);
+        }
     }
 }

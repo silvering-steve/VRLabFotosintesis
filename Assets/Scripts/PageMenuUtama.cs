@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PageMenuUtama : MonoBehaviour
 {
+    public GameObject eval;
+    public Transform canvas;
+    
     public void ClickCahaya()
     {
         GlobalVar.caseEksperimen = GlobalVar.CaseEksperimen.EKSPERIMEN_LIGHT;
@@ -12,5 +15,11 @@ public class PageMenuUtama : MonoBehaviour
     public void ClickNahco()
     {
         GlobalVar.caseEksperimen = GlobalVar.CaseEksperimen.EKSPERIMEN_NAHCO3;
+    }
+
+    public void ClickEval()
+    {
+        var a = Instantiate(eval, canvas);
+        a.SetActive(true);
     }
 }

@@ -66,7 +66,8 @@ public class ParentPilihlahSoal : MonoBehaviour
 
         if(indxSoal >= DataSoal.Count) // jika soal sudah terjawab semua
         {
-            parentQuiz.QuizSelesai(totalScore);
+            // GlobalVar.ScoreQuiz += totalScore;
+            parentQuiz.QuizSelesai();
         }
         else
         {

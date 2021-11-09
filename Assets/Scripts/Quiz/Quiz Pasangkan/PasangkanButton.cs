@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PasangkanButton : MonoBehaviour
 {
+    public Material mat;
     public enum StatusButton
     {
         KIRI = 1,
@@ -28,6 +30,11 @@ public class PasangkanButton : MonoBehaviour
     public Image img_border;
     public Color color_active;
     public Color color_default;
+    
+    private void Update()
+    {
+    
+    }
 
     private void Start()
     {
@@ -56,6 +63,7 @@ public class PasangkanButton : MonoBehaviour
 
                 parentSoal.clickPertama = this;
                 parentSoal.jumClick = 1;
+
                 ColorActive();
             }
             else
@@ -94,16 +102,31 @@ public class PasangkanButton : MonoBehaviour
 
     void CreateLine()
     {
-        Vector3 awal = new Vector3(parentSoal.clickPertama.transform.position.x, parentSoal.clickPertama.transform.position.y, 0);
-        Vector3 akhir = new Vector3(parentSoal.clickKedua.transform.position.x, parentSoal.clickKedua.transform.position.y, 0);
+        var titikAwal = parentSoal.clickPertama.gameObject.transform.GetChild(1).gameObject;
+        var titikAkhir = parentSoal.clickKedua.gameObject.transform.GetChild(1).gameObject;
+
+        Vector3 awal = new Vector3(titikAwal.transform.position.x, titikAwal.transform.position.y, 0);
+        Vector3 akhir = new Vector3(titikAkhir.transform.position.x, titikAkhir.transform.position.y, 0);
         var line = gameObject.AddComponent<LineRenderer>();
-        line.startWidth = 0.1f;
+        line.startWidth = 0.06f;
+        line.material = mat;
         line.SetPosition(0, awal);
         line.SetPosition(1, akhir);
-        line.startColor = Color.blue;
+
+        var click1 = parentSoal.clickPertama.indxButton;
+        var click2 = parentSoal.clickKedua.indxButton;
+
+        if(click1 == click2)
+        {
+            GlobalVar.ScoreQuiz += 1;
+        }
 
         parentSoal.clickPertama.ColorDefault();
 
         parentSoal.ResetClick();
+        
+        parentSoal.total += 1;
     }
+    
+    
 }
